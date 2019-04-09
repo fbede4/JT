@@ -4,6 +4,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import login.LoginController;
+import rides.RidesController;
 
 public class Main extends Application {
 
@@ -19,10 +20,14 @@ public class Main extends Application {
         FXMLLoader ridesPaneLoader = new FXMLLoader(getClass().getResource("rides/rides.fxml"));
         Parent ridesRoot = ridesPaneLoader.load();
 
-        Scene loginScene = new Scene(loginRoot, 300, 275);
-        Scene ridesScene = new Scene(ridesRoot, 300, 275);
+        Scene loginScene = new Scene(loginRoot, 500, 500);
+        Scene ridesScene = new Scene(ridesRoot, 500, 500);
+
         LoginController loginController = (LoginController) loginPaneLoader.getController();
         loginController.setNavigateScene(ridesScene);
+        RidesController ridesController = (RidesController) ridesPaneLoader.getController();
+        ridesController.setNavigateScene(loginScene);
+        ridesController.setStage(primaryStage);
 
         primaryStage.setTitle("Taxee");
         primaryStage.setScene(loginScene);

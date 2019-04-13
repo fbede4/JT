@@ -49,10 +49,6 @@ public class RidesController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends CellObject> observable, CellObject oldValue, CellObject newValue) {
                 System.out.println("Selected item: " + newValue.getTitle());
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                }
                 stage.setScene(navigateScene);
             }
         });

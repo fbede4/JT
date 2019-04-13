@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="rideDetail.RideDetailController"
+            prefHeight="400.0" prefWidth="600.0">
+    <VBox>
+        <children>
+            <Label fx:id="titleLabel" />
+            <VBox>
+                <children>
+                    <Label fx:id="commentLabel" />
+                    <Label fx:id="descriptionLabel"/>
+                </children>
+            </VBox>
+        </children>
+    </VBox>
+</AnchorPane>

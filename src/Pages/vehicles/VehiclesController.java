@@ -1,8 +1,8 @@
-package Pages.rides;
+package Pages.vehicles;
 
 import Components.NiceListView.CellObject;
 import Components.NiceListView.NiceCell;
-import Dtos.RideDto;
+import Dtos.VehicleDto;
 import Helpers.HttpClient;
 import Helpers.Settings;
 import Helpers.User;
@@ -23,18 +23,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class RidesController extends ControllerBase implements Initializable {
+public class VehiclesController extends ControllerBase implements Initializable {
 
     @FXML
     private ListView<CellObject> listView;
 
-    private ObservableList<CellObject> rideObservableList;
-    private ArrayList<RideDto> rides;
+    private ObservableList<CellObject> vehicleObservableList;
+    private ArrayList<VehicleDto> vehicles;
 
-    public RidesController() {
+    public VehiclesController() {
 
-        rideObservableList = FXCollections.observableArrayList();
-        rides = new ArrayList<>();
+        vehicleObservableList = FXCollections.observableArrayList();
+        vehicles = new ArrayList<>();
     }
 
     @Override
@@ -44,14 +44,14 @@ public class RidesController extends ControllerBase implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        listView.setItems(rideObservableList);
+        listView.setItems(vehicleObservableList);
         listView.setCellFactory(studentListView -> new NiceCell());
         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<CellObject>() {
             @Override
             public void changed(ObservableValue<? extends CellObject> observable, CellObject oldValue, CellObject newValue) {
-                for(int i = 0; i < rides.size(); i++){
-                    if(rides.get(i).id == newValue.getId()){
-                        navigationService.navigateToRidesDetail(rides.get(i));
+                for(int i = 0; i < vehicles.size(); i++){
+                    if(vehicles.get(i).id == newValue.getId()){
+                        navigationService.navigateToVehicleDetail(vehicles.get(i));
                         return;
                     }
                 }
@@ -60,14 +60,14 @@ public class RidesController extends ControllerBase implements Initializable {
     }
 
     private void getRides() throws IOException {
-        String result = HttpClient.get(Settings.getAzureBaseUrl() + "/api/Rides/GetRidesDriver", User.getAccessToken());
+        String result = HttpClient.get(Settings.getAzureBaseUrl() + "/api/Vehicles/GetVehicles", User.getAccessToken());
         if(result != ""){
             JSONArray jsonArray = new JSONArray(result);
             for(int i = 0; i < jsonArray.length(); i++){
                 ObjectMapper mapper = new ObjectMapper();
-                RideDto ride = mapper.readValue(jsonArray.get(i).toString(), RideDto.class);
-                rides.add(ride);
-                rideObservableList.add(new CellObject(ride.destination, ride.driverName, String.valueOf(ride.cost) + " HUF", ride.id));
+                VehicleDto vehicle = mapper.readValue(jsonArray.get(i).toString(), VehicleDto.class);
+                vehicles.add(vehicle);
+                vehicleObservableList.add(new CellObject(vehicle.brand, vehicle.model, String.valueOf(vehicle.yearOfProduction), vehicle.id));
             }
         } else {
             // todo error...
@@ -75,6 +75,6 @@ public class RidesController extends ControllerBase implements Initializable {
     }
 
     public void handleBackButtonAction(ActionEvent actionEvent) {
-        navigationService.navigateToVehicles();
+        navigationService.navigateToRides();
     }
 }

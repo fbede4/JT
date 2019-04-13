@@ -1,12 +1,7 @@
-import Pages.rideDetail.RideDetailController;
 import Services.NavigationService;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import Pages.login.LoginController;
-import Pages.rides.RidesController;
 
 public class Main extends Application {
 
@@ -19,7 +14,7 @@ public class Main extends Application {
 
         NavigationService.setStage(primaryStage);
         NavigationService navService = new NavigationService();
-        navService.NavigateToLogin();
+        navService.navigateToLogin();
 
         primaryStage.setTitle("Taxee");
 

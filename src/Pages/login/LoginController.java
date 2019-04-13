@@ -1,10 +1,8 @@
 package Pages.login;
 
-import Dtos.LoginDto;
 import Helpers.HttpClient;
 import Helpers.User;
 import Pages.ControllerBase;
-import Services.NavigationService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,7 +32,7 @@ public class LoginController extends ControllerBase implements Initializable {
         if(res != "") {
             JSONObject jsonOb = new JSONObject(res);
             User.setAccessToken(jsonOb.getString("accessToken"));
-            navigationService.NavigateToRides();
+            navigationService.navigateToRides();
         } else {
             this.actiontarget.setText("Invalid login attempt");
         }

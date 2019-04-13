@@ -2,7 +2,6 @@ package Pages.rideDetail;
 
 import Dtos.RideDto;
 import Pages.ControllerBase;
-import Services.NavigationService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,6 +36,6 @@ public class RideDetailController extends ControllerBase implements Initializabl
 
     @FXML
     protected void handleBackButtonAction(ActionEvent event) {
-        navigationService.NavigateToRides();
+        navigationService.navigateToRides();
     }
 }

@@ -18,7 +18,7 @@ public class VehicleDetailController extends ControllerBase implements Initializ
     @FXML
     private Label brand;
     @FXML
-    private Label type;
+    private Label model;
     @FXML
     private Label yom;
 
@@ -37,7 +37,11 @@ public class VehicleDetailController extends ControllerBase implements Initializ
     public void setVehicle(VehicleDto vehicle) {
         this.vehicle = vehicle;
         this.brand.setText(vehicle.brand);
-        this.type.setText(vehicle.typeOfCar);
+        this.model.setText(vehicle.model);
         this.yom.setText(String.valueOf(vehicle.yearOfProduction));
+    }
+
+    public void handleEditButtonAction(ActionEvent actionEvent) {
+        navigationService.navigateToVehicleEdit(this.vehicle);
     }
 }

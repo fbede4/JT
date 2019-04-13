@@ -4,6 +4,7 @@ import Dtos.RideDto;
 import Dtos.VehicleDto;
 import Pages.rideDetail.RideDetailController;
 import Pages.rides.RidesController;
+import Pages.vehicleCreateEdit.VehicleCreateEditController;
 import Pages.vehicleDetail.VehicleDetailController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -72,6 +73,19 @@ public class NavigationService {
             vehicleDetail.setVehicle(vehicle);
             Scene vehicleDetailScene = new Scene(vehicleDetailRoot, 500, 500);
             primaryStage.setScene(vehicleDetailScene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void navigateToVehicleEdit(VehicleDto vehicle) {
+        try {
+            FXMLLoader paneLoader = new FXMLLoader(getClass().getResource("../Pages/vehicleCreateEdit/vehicle_create_edit.fxml"));
+            Parent root = paneLoader.load();
+            VehicleCreateEditController controller  = paneLoader.getController();
+            controller.setVehicle(vehicle);
+            Scene scene = new Scene(root, 500, 500);
+            primaryStage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
         }

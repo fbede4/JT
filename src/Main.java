@@ -1,10 +1,12 @@
+import Pages.rideDetail.RideDetailController;
+import Services.NavigationService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import login.LoginController;
-import rides.RidesController;
+import Pages.login.LoginController;
+import Pages.rides.RidesController;
 
 public class Main extends Application {
 
@@ -15,22 +17,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         window = primaryStage;
 
-        FXMLLoader loginPaneLoader = new FXMLLoader(getClass().getResource("login/login.fxml"));
-        Parent loginRoot = loginPaneLoader.load();
-        FXMLLoader ridesPaneLoader = new FXMLLoader(getClass().getResource("rides/rides.fxml"));
-        Parent ridesRoot = ridesPaneLoader.load();
-
-        Scene loginScene = new Scene(loginRoot, 500, 500);
-        Scene ridesScene = new Scene(ridesRoot, 500, 500);
-
-        LoginController loginController = (LoginController) loginPaneLoader.getController();
-        loginController.setNavigateScene(ridesScene);
-        RidesController ridesController = (RidesController) ridesPaneLoader.getController();
-        ridesController.setNavigateScene(loginScene);
-        ridesController.setStage(primaryStage);
+        NavigationService.setStage(primaryStage);
+        NavigationService navService = new NavigationService();
+        navService.NavigateToLogin();
 
         primaryStage.setTitle("Taxee");
-        primaryStage.setScene(loginScene);
 
         primaryStage.show();
     }

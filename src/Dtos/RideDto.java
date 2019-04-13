@@ -1,25 +1,24 @@
 package Dtos;
 
+import java.util.Date;
+
 public class RideDto {
-    private String title;
-    private String comment;
-    private String description;
-
-    public RideDto(String title, String comment, String desc){
-        this.title = title;
-        this.comment = comment;
-        this.description = desc;
-    }
-
-    public String getTitle(){
-        return title;
-    }
-
-    public String getComment(){
-        return comment;
-    }
-
-    public String getDescription(){
-        return description;
-    }
+    public int id;
+    public int passengerId;
+    public String passengerName;
+    public int driverId;
+    public String driverName;
+    public String driverUserId;
+    public int rideRequestId;
+    public double distance;
+    public double cost;
+    public String pickUpLocation;
+    public double pickUpLatitude;
+    public double pickUpLongitude;
+    public String destination;
+    public double destinationLatitude;
+    public double destinationLongitude;
+    public boolean isProcessed;
+    public Date startTime;
+    public Date endTime;
 }

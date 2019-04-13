@@ -1,34 +1,42 @@
-package rideDetail;
+package Pages.rideDetail;
 
+import Dtos.RideDto;
+import Pages.ControllerBase;
+import Services.NavigationService;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class RideDetailController implements Initializable {
-    private String title;
-    private String comment;
-    private String description;
+public class RideDetailController extends ControllerBase implements Initializable {
+
+    private RideDto ride;
+    public void setRide(RideDto ride){
+        this.ride = ride;
+        this.destination.setText(ride.destination);
+        this.driverName.setText(ride.driverName);
+        this.cost.setText(String.valueOf(ride.cost) + " HUF");
+    }
+
+    @FXML
+    private Label destination;
+    @FXML
+    private Label driverName;
+    @FXML
+    private Label cost;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.title = "fewfew";
-        this.comment = "few";
-        this.description = "fwe";
     }
 
     public RideDetailController(){
     }
 
-    public String getTitle(){
-        return title;
-    }
-
-    public String getComment(){
-        return comment;
-    }
-
-    public String getDescription(){
-        return description;
+    @FXML
+    protected void handleBackButtonAction(ActionEvent event) {
+        navigationService.NavigateToRides();
     }
 }

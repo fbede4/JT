@@ -40,7 +40,7 @@ public class VehiclesController extends ControllerBase implements Initializable 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            getRides();
+            getVehicles();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,7 +59,7 @@ public class VehiclesController extends ControllerBase implements Initializable 
         });
     }
 
-    private void getRides() throws IOException {
+    private void getVehicles() throws IOException {
         String result = HttpClient.get(Settings.getAzureBaseUrl() + "/api/Vehicles/GetVehicles", User.getAccessToken());
         if(result != ""){
             JSONArray jsonArray = new JSONArray(result);
@@ -76,5 +76,13 @@ public class VehiclesController extends ControllerBase implements Initializable 
 
     public void handleBackButtonAction(ActionEvent actionEvent) {
         navigationService.navigateToRides();
+    }
+
+    public void handleNewVehicleButtonAction(ActionEvent actionEvent) {
+        navigationService.navigateToVehicleCreate();
+    }
+
+    public void handleLogoutButtonAction(ActionEvent actionEvent) {
+        navigationService.navigateToLogin();
     }
 }

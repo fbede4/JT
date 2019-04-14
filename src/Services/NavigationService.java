@@ -2,8 +2,8 @@ package Services;
 
 import Dtos.RideDto;
 import Dtos.VehicleDto;
+import Helpers.User;
 import Pages.rideDetail.RideDetailController;
-import Pages.rides.RidesController;
 import Pages.vehicleCreateEdit.VehicleCreateEditController;
 import Pages.vehicleDetail.VehicleDetailController;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +21,7 @@ public class NavigationService {
 
     public void navigateToLogin() {
         try {
+            User.setAccessToken(null);
             FXMLLoader loginPaneLoader = new FXMLLoader(getClass().getResource("../Pages/login/login.fxml"));
             Parent loginRoot = loginPaneLoader.load();
             Scene loginScene = new Scene(loginRoot, 500, 500);
@@ -84,6 +85,20 @@ public class NavigationService {
             Parent root = paneLoader.load();
             VehicleCreateEditController controller  = paneLoader.getController();
             controller.setVehicle(vehicle);
+            controller.setTitle("Edit Vehicle");
+            Scene scene = new Scene(root, 500, 500);
+            primaryStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void navigateToVehicleCreate() {
+        try {
+            FXMLLoader paneLoader = new FXMLLoader(getClass().getResource("../Pages/vehicleCreateEdit/vehicle_create_edit.fxml"));
+            Parent root = paneLoader.load();
+            VehicleCreateEditController controller  = paneLoader.getController();
+            controller.setTitle("Create Vehicle");
             Scene scene = new Scene(root, 500, 500);
             primaryStage.setScene(scene);
         } catch (IOException e) {

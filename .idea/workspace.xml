@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/vehicleCreateEdit/vehicle_create_edit.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Taxee/Pages/vehicleDetail/vehicle_detail.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Taxee/Pages/vehicleDetail/vehicle_detail.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/vehicleDetail/VehicleDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/vehicleDetail/VehicleDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/vehicleDetail/vehicle_detail.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/vehicleDetail/vehicle_detail.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helpers/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/HttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/rides/RidesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/rides/RidesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/rides/rides.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/rides/rides.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/vehicleCreateEdit/vehicle_create_edit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/vehicleCreateEdit/vehicle_create_edit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/vehicles/VehiclesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/vehicles/VehiclesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/vehicles/vehicles.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/vehicles/vehicles.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/NavigationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/NavigationService.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -67,7 +70,7 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/Main.java">
                 <provider selected="true" editor-type-id="text-editor">
@@ -90,66 +93,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pages/vehicleDetail/vehicle_detail.fxml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Services/NavigationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="34" column="105" lean-forward="true" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
+            <state relative-caret-position="477">
+              <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pages/vehicleCreateEdit/vehicle_create_edit.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Pages/vehicleCreateEdit/vehicle_create_edit.fxml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pages/vehicles/VehiclesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+            <state relative-caret-position="509">
+              <caret line="87" column="1" lean-forward="true" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
+              <folding>
+                <element signature="e#3050#3051#0" expanded="true" />
+                <element signature="e#3084#3085#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="28" column="11" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="11" />
+            <state relative-caret-position="503">
+              <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2736#2737#0" expanded="true" />
+                <element signature="e#2772#2773#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pages/vehicleDetail/VehicleDetailController.java">
+        <entry file="file://$PROJECT_DIR$/src/Pages/rides/rides.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="36" column="48" lean-forward="true" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+            <state relative-caret-position="340">
+              <caret line="20" column="125" selection-start-line="20" selection-start-column="89" selection-end-line="20" selection-end-column="125" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Services/NavigationService.java">
+        <entry file="file://$PROJECT_DIR$/src/Pages/rides/RidesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="85" selection-start-line="85" selection-end-line="85" />
+            <state relative-caret-position="475">
+              <caret line="81" column="33" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pages/login/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="17" selection-start-line="17" selection-end-line="19" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2852#2853#0" expanded="true" />
+                <element signature="e#2903#2904#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,10 +212,8 @@
         <option value="$PROJECT_DIR$/src/rides/RidesController.java" />
         <option value="$PROJECT_DIR$/src/Helpers/Settings.java" />
         <option value="$PROJECT_DIR$/src/Helpers/User.java" />
-        <option value="$PROJECT_DIR$/src/Helpers/HttpClient.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Pages/ControllerBase.java" />
-        <option value="$PROJECT_DIR$/src/Pages/login/LoginController.java" />
         <option value="$PROJECT_DIR$/src/Dtos/RideDto.java" />
         <option value="$PROJECT_DIR$/src/Components/NiceListView/NiceCell.java" />
         <option value="$PROJECT_DIR$/src/Components/NiceListView/CellObject.java" />
@@ -212,16 +221,18 @@
         <option value="$PROJECT_DIR$/src/Pages/rideDetail/RideDetailController.java" />
         <option value="$PROJECT_DIR$/src/Pages/vehicles/rides.fxml" />
         <option value="$PROJECT_DIR$/src/Dtos/VehicleDto.java" />
-        <option value="$PROJECT_DIR$/src/Pages/rides/RidesController.java" />
-        <option value="$PROJECT_DIR$/src/Pages/rides/rides.fxml" />
         <option value="$PROJECT_DIR$/src/Pages/vehicleDetail/ride_detail.fxml" />
-        <option value="$PROJECT_DIR$/src/Pages/vehicles/VehiclesController.java" />
-        <option value="$PROJECT_DIR$/src/Pages/vehicles/vehicles.fxml" />
         <option value="$PROJECT_DIR$/src/Pages/vehicleDetail/vehicle_detail.fxml" />
-        <option value="$PROJECT_DIR$/src/Services/NavigationService.java" />
         <option value="$PROJECT_DIR$/src/Pages/vehicleDetail/VehicleDetailController.java" />
-        <option value="$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java" />
+        <option value="$PROJECT_DIR$/src/Pages/login/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/Helpers/HttpClient.java" />
+        <option value="$PROJECT_DIR$/src/Pages/rides/rides.fxml" />
+        <option value="$PROJECT_DIR$/src/Pages/vehicles/vehicles.fxml" />
+        <option value="$PROJECT_DIR$/src/Pages/vehicles/VehiclesController.java" />
+        <option value="$PROJECT_DIR$/src/Pages/rides/RidesController.java" />
         <option value="$PROJECT_DIR$/src/Pages/vehicleCreateEdit/vehicle_create_edit.fxml" />
+        <option value="$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java" />
+        <option value="$PROJECT_DIR$/src/Services/NavigationService.java" />
       </list>
     </option>
   </component>
@@ -241,7 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -259,6 +270,12 @@
               <item name="Taxee" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Dtos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Taxee" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Taxee" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Helpers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Taxee" type="b2602c69:ProjectViewProjectNode" />
@@ -311,7 +328,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,7 +340,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555171516979" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555236872437" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -444,7 +461,7 @@
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.13486141" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1359275" />
       <window_info id="Structure" order="1" weight="0.24946696" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -453,8 +470,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25568798" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.30444205" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25568798" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.30444205" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -518,24 +535,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
@@ -598,30 +597,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/HttpClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -646,36 +625,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/jackson-core-2.2.3.jar!/com/fasterxml/jackson/core/ObjectCodec.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#205#206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#118#119#0" expanded="true" />
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jackson-core-2.2.3.jar!/com/fasterxml/jackson/core/ObjectCodec.class" />
     <entry file="file://$PROJECT_DIR$/src/Dtos/RideDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -737,26 +687,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pages/rides/RidesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="56" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2815#2816#0" expanded="true" />
-            <element signature="e#2869#2870#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pages/rides/rides.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="24" selection-start-line="18" selection-end-line="19" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Pages/login/login.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -772,43 +702,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pages/vehicles/vehicles.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Pages/vehicleDetail/vehicle_detail.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="26" selection-end-column="17" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pages/vehicles/VehiclesController.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="72" column="28" lean-forward="true" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pages/login/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="17" selection-start-line="17" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pages/vehicleDetail/vehicle_detail.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Pages/login/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="105" lean-forward="true" selection-start-line="34" selection-start-column="105" selection-end-line="34" selection-end-column="105" />
+        <state relative-caret-position="527">
+          <caret line="31" column="82" lean-forward="true" selection-start-line="31" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/NavigationService.java">
+    <entry file="file://$PROJECT_DIR$/src/Pages/vehicleDetail/VehicleDetailController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="203">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#205#206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/HttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -817,8 +759,8 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="1773" selection-start-line="1773" selection-end-line="1773" />
+        <state relative-caret-position="426">
+          <caret line="1785" column="31" lean-forward="true" selection-start-line="1785" selection-start-column="31" selection-end-line="1785" selection-end-column="31" />
           <folding>
             <element signature="e#66921#66922#0" expanded="true" />
             <element signature="e#66966#66967#0" expanded="true" />
@@ -826,30 +768,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pages/vehicleDetail/VehicleDetailController.java">
+    <entry file="file://$PROJECT_DIR$/src/Pages/rides/rides.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="36" column="48" lean-forward="true" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+        <state relative-caret-position="340">
+          <caret line="20" column="125" selection-start-line="20" selection-start-column="89" selection-end-line="20" selection-end-column="125" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pages/vehicles/vehicles.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="108" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="108" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pages/vehicles/VehiclesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="87" column="1" lean-forward="true" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
+          <folding>
+            <element signature="e#3050#3051#0" expanded="true" />
+            <element signature="e#3084#3085#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java">
+    <entry file="file://$PROJECT_DIR$/src/Pages/rides/RidesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="11" />
+        <state relative-caret-position="475">
+          <caret line="81" column="33" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2852#2853#0" expanded="true" />
+            <element signature="e#2903#2904#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <element signature="e#118#119#0" expanded="true" />
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="e#205#206#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pages/vehicleCreateEdit/vehicle_create_edit.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+        <state relative-caret-position="221">
+          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pages/vehicleCreateEdit/VehicleCreateEditController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2736#2737#0" expanded="true" />
+            <element signature="e#2772#2773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/NavigationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

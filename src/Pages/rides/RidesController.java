@@ -77,4 +77,8 @@ public class RidesController extends ControllerBase implements Initializable {
     public void handleBackButtonAction(ActionEvent actionEvent) {
         navigationService.navigateToVehicles();
     }
+
+    public void handleLogoutButtonAction(ActionEvent actionEvent) {
+        navigationService.navigateToLogin();
+    }
 }

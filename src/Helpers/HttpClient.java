@@ -17,6 +17,15 @@ public class HttpClient {
         return "";
     }
 
+    public static String post(String url, String token, String body) {
+        try {
+            return sendPost(url, token, body);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
     public static String get(String url, String token) {
         try {
             return sendGet(url, token);

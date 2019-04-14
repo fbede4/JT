@@ -1,6 +1,7 @@
 package Pages.login;
 
 import Helpers.HttpClient;
+import Helpers.Settings;
 import Helpers.User;
 import Pages.ControllerBase;
 import javafx.event.ActionEvent;
@@ -28,7 +29,7 @@ public class LoginController extends ControllerBase implements Initializable {
         json.put("email", email);
         json.put("password", password);
 
-        String res = HttpClient.post("http://taxeeappservice.azurewebsites.net/api/account/login", "", json);
+        String res = HttpClient.post(Settings.getAzureBaseUrl() + "/api/account/login", "", json);
         if(res != "") {
             JSONObject jsonOb = new JSONObject(res);
             User.setAccessToken(jsonOb.getString("accessToken"));

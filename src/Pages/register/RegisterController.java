@@ -1,4 +1,4 @@
-package Pages.login;
+package Pages.register;
 
 import Helpers.HttpClient;
 import Helpers.SQLiteHandler;
@@ -12,40 +12,43 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import org.json.JSONObject;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginController extends ControllerBase implements Initializable {
+public class RegisterController extends ControllerBase implements Initializable {
 
     @FXML private TextField emailField;
     @FXML private PasswordField passwordField;
+    @FXML private PasswordField confirmPasswordField;
     @FXML private Text actiontarget;
 
     @FXML
     protected void handleSubmitButtonAction(ActionEvent event) {
         String email = this.emailField.getText();
         String password = this.passwordField.getText();
+        String confirmPassword = this.confirmPasswordField.getText();
+        if(!confirmPassword.equals(password)){
+            this.actiontarget.setText("Passwords don't match");
+            return;
+        }
 
         JSONObject json = new JSONObject();
         json.put("email", email);
         json.put("password", password);
+        json.put("isDriver", true);
+        json.put("name", email);
+        json.put("city", email);
 
-        String res = HttpClient.post(Settings.getAzureBaseUrl() + "/api/account/login", "", json);
+        String res = HttpClient.post(Settings.getAzureBaseUrl() + "/api/account/register", "", json);
         if(res != "") {
-            JSONObject jsonOb = new JSONObject(res);
-            User.setAccessToken(jsonOb.getString("accessToken"));
-            SQLiteHandler.insertOrUpdateToken(User.getAccessToken());
-            navigationService.navigateToRides();
+            navigationService.navigateToLogin();
         } else {
-            this.actiontarget.setText("Invalid login attempt");
+            this.actiontarget.setText("Registration failed");
         }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    }
-
-    public void handleRegisterButtonAction(ActionEvent actionEvent) {
-        navigationService.navigateToRegister();
     }
 }

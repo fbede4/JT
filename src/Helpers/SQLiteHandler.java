@@ -11,10 +11,9 @@ import java.util.ArrayList;
 
 public class SQLiteHandler {
     /**
-     * Connect to a sample database
+     * Connect to the local database
      */
     private static Connection connect() {
-        // SQLite connection string
         String url = "jdbc:sqlite:localdb.db";
         Connection conn = null;
         try {
@@ -27,7 +26,6 @@ public class SQLiteHandler {
 
     /**
      * Insert a vehicle into the vehicles table
-     *
      * @param vehicle
      */
     public static void insertVehicle(VehicleDto vehicle) {
@@ -71,7 +69,6 @@ public class SQLiteHandler {
         try (Connection conn = connect();
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
-            SimpleDateFormat formatter = new SimpleDateFormat(Settings.getDsteFormat());
 
             // loop through the result set
             while (rs.next()) {
@@ -91,7 +88,6 @@ public class SQLiteHandler {
 
     /**
      * Insert a ride into the rides table
-     *
      * @param ride
      */
     public static void insertRide(RideDto ride) {
@@ -147,9 +143,9 @@ public class SQLiteHandler {
                 ride.id = rs.getInt("id");
                 ride.destination = rs.getString("destination");
                 ride.pickUpLocation = rs.getString("pickUpLocation");
-                ride.passengerName = rs.getString("destination");
+                ride.passengerName = rs.getString("passengerName");
                 ride.distance = rs.getDouble("distance");
-                ride.cost = rs.getDouble("cost");
+                ride.cost = 0;
                 ride.endTime = formatter.parse(rs.getString("endTime"));
                 ride.startTime = formatter.parse(rs.getString("startTime"));
                 result.add(ride);
@@ -164,7 +160,6 @@ public class SQLiteHandler {
 
     /**
      * Insert a user into the users table
-     *
      * @param token
      */
     public static void insertOrUpdateToken(String token) {
@@ -223,7 +218,6 @@ public class SQLiteHandler {
 
     /**
      * Create rides table
-     *
      */
     private static void createRidesTableIfNotExists() {
         String sql = "CREATE TABLE \"Rides\" ( `id` INTEGER, `passengerName` REAL, `distance` REAL, `pickUpLocation` TEXT, `destination` TEXT, `startTime` TEXT, `endTime` TEXT, `cost` REAL )";
@@ -239,7 +233,6 @@ public class SQLiteHandler {
 
     /**
      * Create vehicles table
-     *
      */
     private static void createVehiclesTableIfNotExists() {
         String sql = "CREATE TABLE \"Vehicles\" ( `brand` TEXT, `type` TEXT, `model` TEXT, `yom` INTEGER, `id` INTEGER )";
@@ -255,7 +248,6 @@ public class SQLiteHandler {
 
     /**
      * Create user table
-     *
      */
     private static void createUserTableIfNotExists() {
         String sql = "CREATE TABLE \"User\" ( `accessToken` TEXT, `id` INTEGER NOT NULL UNIQUE, PRIMARY KEY(`id`) )";

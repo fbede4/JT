@@ -33,6 +33,17 @@ public class NavigationService {
         }
     }
 
+    public void navigateToRegister() {
+        try {
+            FXMLLoader oaneLoader = new FXMLLoader(getClass().getResource("../Pages/register/register.fxml"));
+            Parent root = oaneLoader.load();
+            Scene scene = new Scene(root, 500, 500);
+            primaryStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void navigateToRides() {
         try {
             FXMLLoader ridesPaneLoader = new FXMLLoader(getClass().getResource("../Pages/rides/rides.fxml"));

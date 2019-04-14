@@ -2,7 +2,11 @@ package Pages.vehicleDetail;
 
 import Dtos.RideDto;
 import Dtos.VehicleDto;
+import Helpers.HttpClient;
+import Helpers.Settings;
+import Helpers.User;
 import Pages.ControllerBase;
+import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -43,5 +47,10 @@ public class VehicleDetailController extends ControllerBase implements Initializ
 
     public void handleEditButtonAction(ActionEvent actionEvent) {
         navigationService.navigateToVehicleEdit(this.vehicle);
+    }
+
+    public void handleDeleteButtonAction(ActionEvent actionEvent) {
+        HttpClient.post(Settings.getAzureBaseUrl() + "/api/Vehicles/DeleteVehicle/" + this.vehicle.id, User.getAccessToken(), "{}");
+        navigationService.navigateToVehicles();
     }
 }

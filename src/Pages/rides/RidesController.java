@@ -9,6 +9,7 @@ import Helpers.Settings;
 import Helpers.User;
 import Pages.ControllerBase;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -18,6 +19,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import org.json.JSONArray;
+import java.util.Date;
 
 import java.io.IOException;
 import java.net.URL;
@@ -87,5 +89,24 @@ public class RidesController extends ControllerBase implements Initializable {
 
     public void handleLogoutButtonAction(ActionEvent actionEvent) {
         navigationService.navigateToLogin();
+    }
+
+    public void handleAddDummyRidesButton(ActionEvent actionEvent) throws IOException {
+        for(int i = 0; i < 10; i++) {
+            RideDto ride = new RideDto();
+            ride.id = 0;
+            ride.startTime = new Date();
+            ride.endTime = new Date();
+            ride.pickUpLocation = "Budapest, Bocskai ut 77-79.";
+            ride.destination = "Budakeszi, Barackvirag utca 35.";
+            ride.passengerName = "passenger 1";
+            ride.cost = 500;
+            ride.distance = 12;
+
+            Gson gson = new Gson();
+            String json = gson.toJson(ride);
+            HttpClient.post(Settings.getAzureBaseUrl() + "/api/Rides/SaveRide", User.getAccessToken(), json);
+        }
+        getRides();
     }
 }

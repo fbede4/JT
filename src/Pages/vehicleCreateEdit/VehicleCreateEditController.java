@@ -41,6 +41,14 @@ public class VehicleCreateEditController extends ControllerBase implements Initi
     }
 
     public void handleSubmitButtonAction(ActionEvent actionEvent) throws IOException {
+        if(brand.getText().equals(null) || brand.getText().equals("")
+                || model.getText().equals(null) || model.getText().equals("")
+                || yom.getText().equals(null) || yom.getText().equals("")
+                || type.getText().equals(null) || type.getText().equals("")) {
+            this.message.setText("Kitöltetlen mezők!");
+            return;
+        }
+
         this.vehicle.brand = brand.getText();
         this.vehicle.model = model.getText();
         this.vehicle.yearOfProduction = Integer.parseInt(yom.getText());
@@ -74,7 +82,11 @@ public class VehicleCreateEditController extends ControllerBase implements Initi
     }
 
     public void handleBackButtonAction(ActionEvent actionEvent) {
-        navigationService.navigateToVehicleDetail(this.vehicle);
+        if(this.title.getText().equals("Create Vehicle")) {
+            navigationService.navigateToVehicles();
+        } else {
+            navigationService.navigateToVehicleDetail(this.vehicle);
+        }
     }
 
     public void setTitle(String title){

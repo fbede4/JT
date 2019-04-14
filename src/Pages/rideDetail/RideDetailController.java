@@ -1,6 +1,9 @@
 package Pages.rideDetail;
 
 import Dtos.RideDto;
+import Helpers.HttpClient;
+import Helpers.Settings;
+import Helpers.User;
 import Pages.ControllerBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,6 +48,11 @@ public class RideDetailController extends ControllerBase implements Initializabl
 
     @FXML
     protected void handleBackButtonAction(ActionEvent event) {
+        navigationService.navigateToRides();
+    }
+
+    public void handleDeleteButtonAction(ActionEvent actionEvent) {
+        HttpClient.post(Settings.getAzureBaseUrl() + "/api/Rides/DeleteRide/" + this.ride.id, User.getAccessToken(), "{}");
         navigationService.navigateToRides();
     }
 }

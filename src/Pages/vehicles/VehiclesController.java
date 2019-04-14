@@ -70,7 +70,8 @@ public class VehiclesController extends ControllerBase implements Initializable 
                 vehicleObservableList.add(new CellObject(vehicle.brand, vehicle.model, String.valueOf(vehicle.yearOfProduction), vehicle.id));
             }
         } else {
-            // todo error...
+            System.out.println("Could not get vehicles from server");
+            // todo use local data
         }
     }
 

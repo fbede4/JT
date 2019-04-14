@@ -1,12 +1,10 @@
 import Services.NavigationService;
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
     Stage window;
-    Scene loginScene, menuScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

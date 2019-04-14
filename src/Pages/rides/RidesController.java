@@ -60,17 +60,18 @@ public class RidesController extends ControllerBase implements Initializable {
     }
 
     private void getRides() throws IOException {
-        String result = HttpClient.get(Settings.getAzureBaseUrl() + "/api/Rides/GetRidesDriver", User.getAccessToken());
+        String result = HttpClient.get(Settings.getAzureBaseUrl() + "/api/Rides/GetRidesDriverJv", User.getAccessToken());
         if(result != ""){
             JSONArray jsonArray = new JSONArray(result);
             for(int i = 0; i < jsonArray.length(); i++){
                 ObjectMapper mapper = new ObjectMapper();
                 RideDto ride = mapper.readValue(jsonArray.get(i).toString(), RideDto.class);
                 rides.add(ride);
-                rideObservableList.add(new CellObject(ride.destination, ride.driverName, String.valueOf(ride.cost) + " HUF", ride.id));
+                rideObservableList.add(new CellObject(ride.destination, ride.passengerName, String.valueOf(ride.cost) + " HUF", ride.id));
             }
         } else {
-            // todo error...
+            System.out.println("Could not get rides from server");
+            // todo use local data
         }
     }
 

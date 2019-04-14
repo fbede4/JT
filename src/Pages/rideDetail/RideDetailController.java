@@ -16,8 +16,11 @@ public class RideDetailController extends ControllerBase implements Initializabl
     public void setRide(RideDto ride){
         this.ride = ride;
         this.destination.setText(ride.destination);
-        this.driverName.setText(ride.driverName);
-        this.cost.setText(String.valueOf(ride.cost) + " HUF");
+        this.driverName.setText(ride.passengerName);
+        this.cost.setText((ride.cost) + " HUF");
+        this.pickUpLocation.setText(ride.pickUpLocation);
+        this.startTime.setText(String.valueOf(ride.startTime));
+        this.endTime.setText(String.valueOf(ride.endTime));
     }
 
     @FXML
@@ -26,6 +29,12 @@ public class RideDetailController extends ControllerBase implements Initializabl
     private Label driverName;
     @FXML
     private Label cost;
+    @FXML
+    private Label pickUpLocation;
+    @FXML
+    private Label startTime;
+    @FXML
+    private Label endTime;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

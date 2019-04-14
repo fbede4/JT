@@ -4,6 +4,7 @@ import Components.NiceListView.CellObject;
 import Components.NiceListView.NiceCell;
 import Dtos.RideDto;
 import Helpers.HttpClient;
+import Helpers.SQLiteHandler;
 import Helpers.Settings;
 import Helpers.User;
 import Pages.ControllerBase;
@@ -62,16 +63,21 @@ public class RidesController extends ControllerBase implements Initializable {
     private void getRides() throws IOException {
         String result = HttpClient.get(Settings.getAzureBaseUrl() + "/api/Rides/GetRidesDriverJv", User.getAccessToken());
         if(result != ""){
+            SQLiteHandler.clearRides();
             JSONArray jsonArray = new JSONArray(result);
             for(int i = 0; i < jsonArray.length(); i++){
                 ObjectMapper mapper = new ObjectMapper();
                 RideDto ride = mapper.readValue(jsonArray.get(i).toString(), RideDto.class);
                 rides.add(ride);
-                rideObservableList.add(new CellObject(ride.destination, ride.passengerName, String.valueOf(ride.cost) + " HUF", ride.id));
+                rideObservableList.add(new CellObject(ride.destination, ride.passengerName, ride.cost + " HUF", ride.id));
+                SQLiteHandler.insertRide(ride);
             }
         } else {
             System.out.println("Could not get rides from server");
-            // todo use local data
+            rides = SQLiteHandler.getRides();
+            for(int i = 0; i < rides.size(); i++){
+                rideObservableList.add(new CellObject(rides.get(i).destination, rides.get(i).passengerName, rides.get(i).cost + " HUF", rides.get(i).id));
+            }
         }
     }
 

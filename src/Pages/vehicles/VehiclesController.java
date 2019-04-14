@@ -4,6 +4,7 @@ import Components.NiceListView.CellObject;
 import Components.NiceListView.NiceCell;
 import Dtos.VehicleDto;
 import Helpers.HttpClient;
+import Helpers.SQLiteHandler;
 import Helpers.Settings;
 import Helpers.User;
 import Pages.ControllerBase;
@@ -62,16 +63,21 @@ public class VehiclesController extends ControllerBase implements Initializable 
     private void getVehicles() throws IOException {
         String result = HttpClient.get(Settings.getAzureBaseUrl() + "/api/Vehicles/GetVehicles", User.getAccessToken());
         if(result != ""){
+            SQLiteHandler.clearVehicles();
             JSONArray jsonArray = new JSONArray(result);
             for(int i = 0; i < jsonArray.length(); i++){
                 ObjectMapper mapper = new ObjectMapper();
                 VehicleDto vehicle = mapper.readValue(jsonArray.get(i).toString(), VehicleDto.class);
                 vehicles.add(vehicle);
                 vehicleObservableList.add(new CellObject(vehicle.brand, vehicle.model, String.valueOf(vehicle.yearOfProduction), vehicle.id));
+                SQLiteHandler.insertVehicle(vehicle);
             }
         } else {
             System.out.println("Could not get vehicles from server");
-            // todo use local data
+            vehicles = SQLiteHandler.getVehicles();
+            for(int i = 0; i < vehicles.size(); i++){
+                vehicleObservableList.add(new CellObject(vehicles.get(i).brand, vehicles.get(i).model, vehicles.get(i).yearOfProduction + " HUF", vehicles.get(i).id));
+            }
         }
     }
 

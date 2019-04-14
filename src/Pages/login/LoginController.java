@@ -1,6 +1,7 @@
 package Pages.login;
 
 import Helpers.HttpClient;
+import Helpers.SQLiteHandler;
 import Helpers.Settings;
 import Helpers.User;
 import Pages.ControllerBase;
@@ -33,6 +34,7 @@ public class LoginController extends ControllerBase implements Initializable {
         if(res != "") {
             JSONObject jsonOb = new JSONObject(res);
             User.setAccessToken(jsonOb.getString("accessToken"));
+            SQLiteHandler.insertOrUpdateToken(User.getAccessToken());
             navigationService.navigateToRides();
         } else {
             this.actiontarget.setText("Invalid login attempt");

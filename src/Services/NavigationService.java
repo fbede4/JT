@@ -2,6 +2,7 @@ package Services;
 
 import Dtos.RideDto;
 import Dtos.VehicleDto;
+import Helpers.SQLiteHandler;
 import Helpers.User;
 import Pages.rideDetail.RideDetailController;
 import Pages.vehicleCreateEdit.VehicleCreateEditController;
@@ -22,6 +23,7 @@ public class NavigationService {
     public void navigateToLogin() {
         try {
             User.setAccessToken(null);
+            SQLiteHandler.clearToken();
             FXMLLoader loginPaneLoader = new FXMLLoader(getClass().getResource("../Pages/login/login.fxml"));
             Parent loginRoot = loginPaneLoader.load();
             Scene loginScene = new Scene(loginRoot, 500, 500);

@@ -30,7 +30,14 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-
+    /**
+     * The progream implements an application that
+     * allows users to handle their ride and vehicle datas
+     *
+     * @author  Bede Fülöp
+     * @version 1.0
+     * @since   2019-04-14
+     */
     public static void main(String[] args) {
         launch(args);
     }

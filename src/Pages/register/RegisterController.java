@@ -8,6 +8,7 @@ import Pages.ControllerBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -42,6 +43,10 @@ public class RegisterController extends ControllerBase implements Initializable 
 
         String res = HttpClient.post(Settings.getAzureBaseUrl() + "/api/account/register", "", json);
         if(res != "") {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText("Registration successful");
+            alert.showAndWait();
             navigationService.navigateToLogin();
         } else {
             this.actiontarget.setText("Registration failed");
@@ -50,5 +55,9 @@ public class RegisterController extends ControllerBase implements Initializable 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    }
+
+    public void handleBackButtonAction(ActionEvent actionEvent) {
+        navigationService.navigateToLogin();
     }
 }

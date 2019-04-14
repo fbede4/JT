@@ -2,6 +2,10 @@ package Dtos;
 
 import java.util.Date;
 
+/**
+ * This object is used for the communication
+ * with the server (get and send rides)
+ */
 public class RideDto {
     public int id;
     public String passengerName;

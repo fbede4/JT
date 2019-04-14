@@ -2,6 +2,9 @@ package Dtos;
 
 import java.io.Serializable;
 
+/**
+ * This object is used to send the login data to the server
+ */
 public class LoginDto implements Serializable {
     private String email;
     private String password;

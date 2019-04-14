@@ -9,6 +9,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ * This class implements the communication with the localdb
+ * SQLite
+ */
 public class SQLiteHandler {
     /**
      * Connect to the local database

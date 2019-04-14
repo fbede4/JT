@@ -14,6 +14,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * This service class implements all the navigation used in the app.
+ * No navigation should happen outside of this class
+ */
 public class NavigationService {
     private static Stage primaryStage;
     public static void setStage(Stage stage){

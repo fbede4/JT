@@ -7,6 +7,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
+/**
+ * This class is a wrapper that implements http communication with the server
+ */
 public class HttpClient {
     public static String post(String url, String token, JSONObject body) {
         try {

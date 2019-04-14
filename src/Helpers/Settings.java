@@ -1,5 +1,8 @@
 package Helpers;
 
+/**
+ * This class contains the application settings
+ */
 public class Settings {
     private static String azureBaseUrl = "https://taxeeappservice.azurewebsites.net";
     //private static String azureBaseUrl = "https://localhost:5001";

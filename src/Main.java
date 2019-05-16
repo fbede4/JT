@@ -1,4 +1,5 @@
 import Helpers.SQLiteHandler;
+import Helpers.Settings;
 import Helpers.User;
 import Services.NavigationService;
 import javafx.application.Application;
@@ -8,8 +9,14 @@ public class Main extends Application {
 
     Stage window;
 
+    /**
+     * This method is responsible for bootstraping the application
+     * Creates the local db if it not yet exists
+     * Navigates to login or rides page depending on
+     * saved user data
+     */
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) {
         window = primaryStage;
 
         SQLiteHandler.createLocalTablesIfNotExist();
@@ -17,8 +24,8 @@ public class Main extends Application {
         NavigationService.setStage(primaryStage);
         NavigationService navService = new NavigationService();
 
-        String token = SQLiteHandler.getToken();
-        if(token != ""){
+        String token = Settings.getAuthToken();
+        if(token != null){
             User.setAccessToken(token);
             navService.navigateToRides();
         } else {

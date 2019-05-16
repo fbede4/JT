@@ -34,6 +34,7 @@
          <Button layoutX="24.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Back to list" />
          <Button layoutX="168.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleEditButtonAction" text="Edit" />
          <Button layoutX="160.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="X Delete" textFill="RED" />
+         <Label fx:id="errorText" layoutX="200.0" layoutY="22.0" text="Label" textFill="RED" />
       </children>
    </AnchorPane>
 </AnchorPane>

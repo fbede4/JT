@@ -39,6 +39,7 @@
           <Label fx:id="endTime" layoutX="188.0" layoutY="305.0" text="Label" />
          <Button layoutX="254.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Back to list" />
          <Button layoutX="67.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="X Delete" textFill="#c60000" />
+         <Label fx:id="errorText" layoutX="188.0" layoutY="22.0" text="Label" textFill="RED" />
       </children>
    </AnchorPane>
 </AnchorPane>

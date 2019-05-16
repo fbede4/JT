@@ -1,0 +1,17 @@
+gson
+https://jar-download.com/?search_box=gson
+
+jackson-annotations
+https://jar-download.com/?search_box=jackson-annotations
+
+jackson-core
+https://jar-download.com/artifacts/com.fasterxml.jackson.core/jackson-core
+
+jackson-databaind
+https://jar-download.com/?search_box=jackson-databind
+
+json
+https://jar-download.com/artifacts/org.json/json
+
+sqlite-jdbc
+https://jar-download.com/?search_box=sqlite-jdbc

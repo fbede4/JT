@@ -1,16 +1,21 @@
 package Helpers;
 
 import org.json.JSONObject;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
 /**
  * This class is a wrapper that implements http communication with the server
+ * No server calls should happen outside of this class
  */
 public class HttpClient {
+    /**
+     * This function is responsible for HTTP Post methods
+     * @param url: host url
+     * @param token: auth token
+     * @param body: content of the request as a JSONObject
+     */
     public static String post(String url, String token, JSONObject body) {
         try {
             return sendPost(url, token, body.toString());
@@ -20,6 +25,12 @@ public class HttpClient {
         return "";
     }
 
+    /**
+     * This function is responsible for HTTP Post methods
+     * @param url: host url
+     * @param token: auth token
+     * @param body: content of the request as a String in Json format
+     */
     public static String post(String url, String token, String body) {
         try {
             return sendPost(url, token, body);
@@ -29,6 +40,11 @@ public class HttpClient {
         return "";
     }
 
+    /**
+     * This function is responsible for HTTP Get methods
+     * @param url: host url
+     * @param token: auth token
+     */
     public static String get(String url, String token) {
         try {
             return sendGet(url, token);
@@ -53,7 +69,9 @@ public class HttpClient {
         con.setRequestMethod("POST");
         con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
         con.setRequestProperty("Accept", "application/json");
-        con.setRequestProperty("authorization", "Bearer " + token);
+        if(token != null) {
+            con.setRequestProperty("authorization", "Bearer " + token);
+        }
         con.setDoOutput(true);
         con.setDoInput(true);
 

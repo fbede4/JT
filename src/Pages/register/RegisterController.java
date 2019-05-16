@@ -17,6 +17,10 @@ import org.json.JSONObject;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * This controller is responsible for handling business logic
+ * of the register page
+ */
 public class RegisterController extends ControllerBase implements Initializable {
 
     @FXML private TextField emailField;
@@ -29,6 +33,12 @@ public class RegisterController extends ControllerBase implements Initializable 
         String email = this.emailField.getText();
         String password = this.passwordField.getText();
         String confirmPassword = this.confirmPasswordField.getText();
+
+        if(email.isEmpty() || password.isEmpty()){
+            this.actiontarget.setText("You have to fill all fields!");
+            return;
+        }
+
         if(!confirmPassword.equals(password)){
             this.actiontarget.setText("Passwords don't match");
             return;

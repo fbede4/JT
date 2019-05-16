@@ -8,11 +8,16 @@ import Pages.ControllerBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * This controller is responsible for handling business logic
+ * of the ride detail page
+ */
 public class RideDetailController extends ControllerBase implements Initializable {
 
     private RideDto ride;
@@ -38,9 +43,12 @@ public class RideDetailController extends ControllerBase implements Initializabl
     private Label startTime;
     @FXML
     private Label endTime;
+    @FXML
+    private Label errorText;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        errorText.setVisible(false);
     }
 
     public RideDetailController(){
@@ -52,7 +60,16 @@ public class RideDetailController extends ControllerBase implements Initializabl
     }
 
     public void handleDeleteButtonAction(ActionEvent actionEvent) {
-        HttpClient.post(Settings.getAzureBaseUrl() + "/api/Rides/DeleteRide/" + this.ride.id, User.getAccessToken(), "{}");
-        navigationService.navigateToRides();
+        String result = HttpClient.post(Settings.getAzureBaseUrl() + "/api/Rides/DeleteRide/" + this.ride.id, User.getAccessToken(), "{}");
+        if(result == "") {
+            errorText.setVisible(true);
+            errorText.setText("Delete failed!");
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText("Ride deleted!");
+            alert.showAndWait();
+            navigationService.navigateToRides();
+        }
     }
 }

@@ -2,7 +2,6 @@ package Helpers;
 
 import Dtos.RideDto;
 import Dtos.VehicleDto;
-
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -30,7 +29,7 @@ public class SQLiteHandler {
 
     /**
      * Insert a vehicle into the vehicles table
-     * @param vehicle
+     * @param vehicle - Vehicle Dto
      */
     public static void insertVehicle(VehicleDto vehicle) {
         String sql = "INSERT INTO vehicles (id,brand,model,type,yom) " +
@@ -58,7 +57,7 @@ public class SQLiteHandler {
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.executeUpdate();
+             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -92,7 +91,7 @@ public class SQLiteHandler {
 
     /**
      * Insert a ride into the rides table
-     * @param ride
+     * @param ride - Ride Dto
      */
     public static void insertRide(RideDto ride) {
         String sql = "INSERT INTO rides (id,passengerName,distance,pickUpLocation,destination,cost,startTime,endTime) " +

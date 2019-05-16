@@ -1,20 +1,23 @@
 package Pages.vehicleDetail;
 
-import Dtos.RideDto;
 import Dtos.VehicleDto;
 import Helpers.HttpClient;
 import Helpers.Settings;
 import Helpers.User;
 import Pages.ControllerBase;
-import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * This controller is responsible for handling business logic
+ * of the vehicle detail page
+ */
 public class VehicleDetailController extends ControllerBase implements Initializable {
 
     private VehicleDto vehicle;
@@ -25,9 +28,12 @@ public class VehicleDetailController extends ControllerBase implements Initializ
     private Label model;
     @FXML
     private Label yom;
+    @FXML
+    private Label errorText;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        errorText.setVisible(false);
     }
 
     public VehicleDetailController(){
@@ -50,7 +56,16 @@ public class VehicleDetailController extends ControllerBase implements Initializ
     }
 
     public void handleDeleteButtonAction(ActionEvent actionEvent) {
-        HttpClient.post(Settings.getAzureBaseUrl() + "/api/Vehicles/DeleteVehicle/" + this.vehicle.id, User.getAccessToken(), "{}");
-        navigationService.navigateToVehicles();
+        String result = HttpClient.post(Settings.getAzureBaseUrl() + "/api/Vehicles/DeleteVehicle/" + this.vehicle.id, User.getAccessToken(), "{}");
+        if(result == "") {
+            errorText.setVisible(true);
+            errorText.setText("Delete failed!");
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText("Vehicle deleted!");
+            alert.showAndWait();
+            navigationService.navigateToVehicles();
+        }
     }
 }

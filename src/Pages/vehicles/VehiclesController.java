@@ -16,6 +16,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.json.JSONArray;
 
@@ -24,26 +25,38 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ * This controller is responsible for handling business logic
+ * of the vehicles list view
+ */
 public class VehiclesController extends ControllerBase implements Initializable {
 
     @FXML
     private ListView<CellObject> listView;
 
+    @FXML
+    private Label errorText;
+
     private ObservableList<CellObject> vehicleObservableList;
     private ArrayList<VehicleDto> vehicles;
 
     public VehiclesController() {
-
         vehicleObservableList = FXCollections.observableArrayList();
         vehicles = new ArrayList<>();
     }
 
+    /**
+     * Initialize list with vehicles
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        errorText.setVisible(false);
         try {
             getVehicles();
         } catch (IOException e) {
             e.printStackTrace();
+            errorText.setText("No data found!");
+            errorText.setVisible(true);
         }
         listView.setItems(vehicleObservableList);
         listView.setCellFactory(studentListView -> new NiceCell());
@@ -60,6 +73,11 @@ public class VehiclesController extends ControllerBase implements Initializable 
         });
     }
 
+    /**
+     * Fills the list with the vehicles of the user
+     * gets the data from the server by defaukt, if there is no connection
+     * it gets the data from the local SQLite database
+     */
     private void getVehicles() throws IOException {
         String result = HttpClient.get(Settings.getAzureBaseUrl() + "/api/Vehicles/GetVehicles", User.getAccessToken());
         if(result != ""){
@@ -74,6 +92,8 @@ public class VehiclesController extends ControllerBase implements Initializable 
             }
         } else {
             System.out.println("Could not get vehicles from server");
+            errorText.setText("Unable to connect to server!");
+            errorText.setVisible(true);
             vehicles = SQLiteHandler.getVehicles();
             for(int i = 0; i < vehicles.size(); i++){
                 vehicleObservableList.add(new CellObject(vehicles.get(i).brand, vehicles.get(i).model, vehicles.get(i).yearOfProduction + " HUF", vehicles.get(i).id));

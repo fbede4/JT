@@ -8,6 +8,9 @@ import javafx.scene.control.ListCell;
 
 import java.io.IOException;
 
+/**
+ * This object is used as a view template for a list item
+ */
 public class NiceCell extends ListCell<CellObject> {
 
     @FXML

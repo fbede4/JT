@@ -15,6 +15,10 @@ import org.json.JSONObject;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * This controller is responsible for handling business logic
+ * of the login page
+ */
 public class LoginController extends ControllerBase implements Initializable {
 
     @FXML private TextField emailField;
@@ -26,15 +30,21 @@ public class LoginController extends ControllerBase implements Initializable {
         String email = this.emailField.getText();
         String password = this.passwordField.getText();
 
+        if(email.isEmpty() || password.isEmpty()){
+            this.actiontarget.setText("You have to fill all fields!");
+            return;
+        }
+
         JSONObject json = new JSONObject();
         json.put("email", email);
         json.put("password", password);
 
-        String res = HttpClient.post(Settings.getAzureBaseUrl() + "/api/account/login", "", json);
+        String res = HttpClient.post(Settings.getAzureBaseUrl() + "/api/account/login", null, json);
         if(res != "") {
             JSONObject jsonOb = new JSONObject(res);
             User.setAccessToken(jsonOb.getString("accessToken"));
             SQLiteHandler.insertOrUpdateToken(User.getAccessToken());
+            Settings.setAuthProperty(User.getAccessToken());
             navigationService.navigateToRides();
         } else {
             this.actiontarget.setText("Invalid login attempt");

@@ -19,7 +19,8 @@
             <Button layoutX="303.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Rides" />
             <ListView fx:id="listView" layoutX="26.0" layoutY="86.0" prefHeight="400.0" prefWidth="450.0" />
             <Button layoutX="145.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleNewVehicleButtonAction" text="+ New Vehicle" />
-            <Button layoutX="411.0" layoutY="17.0" mnemonicParsing="false" text="Logout" onAction="#handleLogoutButtonAction" />
+            <Button layoutX="411.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleLogoutButtonAction" text="Logout" />
+            <Label  fx:id="errorText" layoutX="13.0" layoutY="56.0" text="Szerver nem elérhető" textFill="#f50000" />
         </children>
     </AnchorPane>
 </children>
